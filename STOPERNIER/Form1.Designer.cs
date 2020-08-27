@@ -194,42 +194,42 @@
             // startToolStripMenuItem
             // 
             this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.startToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.startToolStripMenuItem.Text = "Start";
             this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
             // 
             // selectToolStripMenuItem
             // 
             this.selectToolStripMenuItem.Name = "selectToolStripMenuItem";
-            this.selectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.selectToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.selectToolStripMenuItem.Text = "Select";
             this.selectToolStripMenuItem.Click += new System.EventHandler(this.selectToolStripMenuItem_Click);
             // 
             // dpadUpToolStripMenuItem
             // 
             this.dpadUpToolStripMenuItem.Name = "dpadUpToolStripMenuItem";
-            this.dpadUpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dpadUpToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.dpadUpToolStripMenuItem.Text = "DpadUp";
             this.dpadUpToolStripMenuItem.Click += new System.EventHandler(this.dpadUpToolStripMenuItem_Click);
             // 
             // dpadUpToolStripMenuItem1
             // 
             this.dpadUpToolStripMenuItem1.Name = "dpadUpToolStripMenuItem1";
-            this.dpadUpToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.dpadUpToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
             this.dpadUpToolStripMenuItem1.Text = "DpadDown";
             this.dpadUpToolStripMenuItem1.Click += new System.EventHandler(this.dpadUpToolStripMenuItem1_Click);
             // 
             // dpadUpToolStripMenuItem2
             // 
             this.dpadUpToolStripMenuItem2.Name = "dpadUpToolStripMenuItem2";
-            this.dpadUpToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.dpadUpToolStripMenuItem2.Size = new System.Drawing.Size(133, 22);
             this.dpadUpToolStripMenuItem2.Text = "DpadLeft";
             this.dpadUpToolStripMenuItem2.Click += new System.EventHandler(this.dpadUpToolStripMenuItem2_Click);
             // 
             // dpadUpToolStripMenuItem3
             // 
             this.dpadUpToolStripMenuItem3.Name = "dpadUpToolStripMenuItem3";
-            this.dpadUpToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.dpadUpToolStripMenuItem3.Size = new System.Drawing.Size(133, 22);
             this.dpadUpToolStripMenuItem3.Text = "DpadRight";
             this.dpadUpToolStripMenuItem3.Click += new System.EventHandler(this.dpadUpToolStripMenuItem3_Click);
             // 
@@ -271,6 +271,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::STOPERNIER.Properties.Resources.Yorha4;
             this.ClientSize = new System.Drawing.Size(304, 201);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);

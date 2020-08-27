@@ -16,16 +16,28 @@ namespace STOPERNIER
 
     public partial class Form1 : Form
     {
+        private const int debouncing_offset_value = 10;
         Controller controller;
         int Reset_button_selected;
         public bool connected, pad_control = false;
         int min, sec, msec;
         private int buttonreset = 0;
-
+        
         public Form1()
-        {
-            
+        { 
             InitializeComponent();
+        }
+
+        private void Transparent_background()
+        {
+            label1.BackColor = System.Drawing.Color.Transparent;
+            label2.BackColor = System.Drawing.Color.Transparent;
+            label4.BackColor = System.Drawing.Color.Transparent;
+            label5.BackColor = System.Drawing.Color.Transparent;
+            label6.BackColor = System.Drawing.Color.Transparent;
+            label7.BackColor = System.Drawing.Color.Transparent;
+            //toolStrip1.BackColor = System.Drawing.Color.Transparent;
+
         }
         private void button2_Click(object sender, EventArgs e)//start
         {
@@ -137,7 +149,7 @@ namespace STOPERNIER
                     if (state.Gamepad.Buttons == GamepadButtonFlags.Start)
                     {
                         Thread.Sleep(100);
-                        Button_reset(10);
+                        Button_reset(debouncing_offset_value);
                         Thread.Sleep(100);
                     }
                     break;
@@ -145,7 +157,7 @@ namespace STOPERNIER
                     if (state.Gamepad.Buttons == GamepadButtonFlags.Back)
                     {
                         Thread.Sleep(100);
-                        Button_reset(10);
+                        Button_reset(debouncing_offset_value);
                         Thread.Sleep(100);
                     }
                     break;
@@ -153,7 +165,7 @@ namespace STOPERNIER
                     if (state.Gamepad.Buttons == GamepadButtonFlags.DPadUp)
                     {
                         Thread.Sleep(100);
-                        Button_reset(10);
+                        Button_reset(debouncing_offset_value);
                         Thread.Sleep(100);
                     }
                     break;
@@ -161,7 +173,7 @@ namespace STOPERNIER
                     if (state.Gamepad.Buttons == GamepadButtonFlags.DPadDown)
                     {
                         Thread.Sleep(100);
-                        Button_reset(10);
+                        Button_reset(debouncing_offset_value);
                         Thread.Sleep(100);
                     }
                     break;
@@ -169,7 +181,7 @@ namespace STOPERNIER
                     if (state.Gamepad.Buttons == GamepadButtonFlags.DPadLeft)
                     {
                         Thread.Sleep(100);
-                        Button_reset(10);
+                        Button_reset(debouncing_offset_value);
                         Thread.Sleep(100);
                     }
                     break;
@@ -177,7 +189,7 @@ namespace STOPERNIER
                     if (state.Gamepad.Buttons == GamepadButtonFlags.DPadRight)
                     {
                         Thread.Sleep(100);
-                        Button_reset(10);
+                        Button_reset(debouncing_offset_value);
                         Thread.Sleep(100);
                     }
                     break;
@@ -225,7 +237,7 @@ namespace STOPERNIER
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Transparent_background();
         }
 
         private void label5_Click(object sender, EventArgs e)

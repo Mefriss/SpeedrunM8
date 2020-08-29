@@ -39,14 +39,18 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.negativeOffsetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.beepToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dpadUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dpadUpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dpadUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dpadUpToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.dpadUpToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
@@ -89,10 +93,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(102, 37);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(112, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 73);
+            this.label2.Size = new System.Drawing.Size(78, 55);
             this.label2.TabIndex = 4;
             this.label2.Text = "00";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -109,10 +113,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(200, 37);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(210, 55);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 73);
+            this.label4.Size = new System.Drawing.Size(78, 55);
             this.label4.TabIndex = 6;
             this.label4.Text = "00";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -125,10 +129,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(-1, 37);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(9, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 73);
+            this.label1.Size = new System.Drawing.Size(78, 55);
             this.label1.TabIndex = 3;
             this.label1.Text = "00";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -136,6 +140,7 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton2,
             this.toolStripButton1,
             this.toolStripButton2,
             this.toolStripLabel1,
@@ -146,6 +151,44 @@
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
+            // 
+            // toolStripDropDownButton2
+            // 
+            this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.negativeOffsetToolStripMenuItem});
+            this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
+            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(60, 22);
+            this.toolStripDropDownButton2.Text = "Control";
+            // 
+            // negativeOffsetToolStripMenuItem
+            // 
+            this.negativeOffsetToolStripMenuItem.CheckOnClick = true;
+            this.negativeOffsetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox1,
+            this.beepToolStripMenuItem});
+            this.negativeOffsetToolStripMenuItem.Name = "negativeOffsetToolStripMenuItem";
+            this.negativeOffsetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.negativeOffsetToolStripMenuItem.Text = "Negative Offset";
+            this.negativeOffsetToolStripMenuItem.Click += new System.EventHandler(this.negativeOffsetToolStripMenuItem_Click);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox1.Text = "5";
+            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click_1);
+            // 
+            // beepToolStripMenuItem
+            // 
+            this.beepToolStripMenuItem.CheckOnClick = true;
+            this.beepToolStripMenuItem.Name = "beepToolStripMenuItem";
+            this.beepToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.beepToolStripMenuItem.Text = "Beep";
+            this.beepToolStripMenuItem.Click += new System.EventHandler(this.beepToolStripMenuItem_Click);
             // 
             // toolStripButton1
             // 
@@ -180,8 +223,8 @@
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.startToolStripMenuItem,
             this.selectToolStripMenuItem,
-            this.dpadUpToolStripMenuItem,
             this.dpadUpToolStripMenuItem1,
+            this.dpadUpToolStripMenuItem,
             this.dpadUpToolStripMenuItem2,
             this.dpadUpToolStripMenuItem3});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
@@ -205,19 +248,19 @@
             this.selectToolStripMenuItem.Text = "Select";
             this.selectToolStripMenuItem.Click += new System.EventHandler(this.selectToolStripMenuItem_Click);
             // 
-            // dpadUpToolStripMenuItem
-            // 
-            this.dpadUpToolStripMenuItem.Name = "dpadUpToolStripMenuItem";
-            this.dpadUpToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.dpadUpToolStripMenuItem.Text = "DpadUp";
-            this.dpadUpToolStripMenuItem.Click += new System.EventHandler(this.dpadUpToolStripMenuItem_Click);
-            // 
             // dpadUpToolStripMenuItem1
             // 
             this.dpadUpToolStripMenuItem1.Name = "dpadUpToolStripMenuItem1";
             this.dpadUpToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
             this.dpadUpToolStripMenuItem1.Text = "DpadDown";
             this.dpadUpToolStripMenuItem1.Click += new System.EventHandler(this.dpadUpToolStripMenuItem1_Click);
+            // 
+            // dpadUpToolStripMenuItem
+            // 
+            this.dpadUpToolStripMenuItem.Name = "dpadUpToolStripMenuItem";
+            this.dpadUpToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.dpadUpToolStripMenuItem.Text = "DpadUp";
+            this.dpadUpToolStripMenuItem.Click += new System.EventHandler(this.dpadUpToolStripMenuItem_Click);
             // 
             // dpadUpToolStripMenuItem2
             // 
@@ -321,6 +364,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
+        private System.Windows.Forms.ToolStripMenuItem negativeOffsetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripMenuItem beepToolStripMenuItem;
     }
 }
 

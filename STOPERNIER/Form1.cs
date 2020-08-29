@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 
 namespace STOPERNIER
@@ -16,10 +17,11 @@ namespace STOPERNIER
 
     public partial class Form1 : Form
     {
-        private const int debouncing_offset_value = 10;
+        private int negative_offset = 0;
+        private int debouncing_offset_value = 0;
         Controller controller;
         int Reset_button_selected;
-        public bool connected, pad_control = false;
+        public bool connected, pad_control,negative_offset_button_state,beep_enable = false;
         int min, sec, msec;
         private int buttonreset = 0;
         
@@ -51,7 +53,7 @@ namespace STOPERNIER
         private void button3_Click(object sender, EventArgs e)//reset
         {
             min = 0;
-            sec = 0;
+            sec = negative_offset;
             msec = 0;
             Time_disp();
         }
@@ -94,6 +96,10 @@ namespace STOPERNIER
         }
         private void secup()
         {
+            if (sec == -1 && beep_enable == true)
+            {
+                SystemSounds.Beep.Play();
+            }
             if (sec == 59)
             {
                 msec = 0;
@@ -199,6 +205,13 @@ namespace STOPERNIER
 
 
         }
+        private void timer_update (int _min = 0, int _sec = 0, int _msec = 0)
+        {
+            min = _min;
+            sec = _sec;
+            msec = _msec;
+            Time_disp();
+        }
 
         private void dpadUpToolStripMenuItem1_Click(object sender, EventArgs e)//dpaddown
         {
@@ -250,6 +263,55 @@ namespace STOPERNIER
 
         }
 
+        private void toolStripTextBox1_Click_1(object sender, EventArgs e)
+        {
+            if (negative_offset_button_state == true)
+            {
+                try
+                {
+                    negative_offset = -Int32.Parse(toolStripTextBox1.Text);
+                    timer_update(0, negative_offset, debouncing_offset_value);
+                }
+                catch
+                {
+                    negative_offset_button_state = false;
+                    MessageBox.Show("Offset has to be an integer");
+                }
+            }
+        }
+
+        private void beepToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            beep_enable = !beep_enable;
+        }
+
+        private void negativeOffsetToolStripMenuItem_Click(object sender, EventArgs e)//set negative offset
+        {
+            negative_offset_button_state = !negative_offset_button_state;
+            if (negative_offset_button_state == true)
+            {
+                try
+                {
+                    negative_offset = -Int32.Parse(toolStripTextBox1.Text);
+                    timer_update(0, negative_offset, debouncing_offset_value);
+                }
+                catch
+                {
+                    negative_offset_button_state = false;
+                    MessageBox.Show("Offset has to be an integer");
+                    negativeOffsetToolStripMenuItem.Checked = false;
+                }
+            }
+            else
+            {
+                negative_offset = 0;
+                timer_update(0, negative_offset, debouncing_offset_value);
+            }
+
+
+            
+        }
+
         private void toolStripButton2_Click(object sender, EventArgs e)//init pad key
         {
             pad_control = !pad_control;
@@ -258,12 +320,16 @@ namespace STOPERNIER
                 xone_controller();
                 toolStripLabel1.Text = "Pad Control: ON";
                 timer2.Enabled = true;
-                
+                debouncing_offset_value = 10;
+                timer_update(0, negative_offset, debouncing_offset_value);
+
             }
             else
             {
                 toolStripLabel1.Text = "Pad Control: OFF";
                 timer2.Enabled = false;
+                debouncing_offset_value = 0;
+                timer_update(0, negative_offset, debouncing_offset_value);
             }
                 
         }
@@ -288,9 +354,10 @@ namespace STOPERNIER
         private void startover(int debouncing_offset = 0)
         {
             min = 0;
-            sec = 0;
+            sec = negative_offset;
             msec = debouncing_offset;
             timer1.Enabled = true;
+
             
         }
     }

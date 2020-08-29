@@ -88,24 +88,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ndDVXru.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ndDVXru1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Yorha.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Yorha.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Yorha1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Yorha2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Yorha3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

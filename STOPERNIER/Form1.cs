@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.Media;
-
+using System.IO;
 
 namespace STOPERNIER
 {
@@ -24,11 +24,13 @@ namespace STOPERNIER
         public bool connected, pad_control,negative_offset_button_state,beep_enable = false;
         int min, sec, msec;
         private int buttonreset = 0;
+
+        private List<string> previousTimes = new List<string>();
         
         public Form1()
         { 
             InitializeComponent();
-            // zmiana moja 
+            
         }
 
         private void Transparent_background()
@@ -70,8 +72,24 @@ namespace STOPERNIER
 
         }
 
+        private void saveDataLocally()
+        {
+            try
+            {
+                string time = $"{min.ToString()}:{sec.ToString()}:{msec.ToString()}";
+                previousTimes.Add(time);
+            }
+            catch
+            {
+                // error
+            }
+        }
+
+
+
         private void button1_Click(object sender, EventArgs e) //stop
         {
+            saveDataLocally();
             timer1.Enabled = false;
 
         }
@@ -149,8 +167,8 @@ namespace STOPERNIER
 
         private void timer2_Tick(object sender, EventArgs e)
         {
+
             controller.GetState(out var state);
-            Console.WriteLine(state);
             switch (Reset_button_selected)
             {
                 case 0:

@@ -28,6 +28,7 @@ namespace STOPERNIER
         public Form1()
         { 
             InitializeComponent();
+            // zmiana moja 
         }
 
         private void Transparent_background()
@@ -149,6 +150,7 @@ namespace STOPERNIER
         private void timer2_Tick(object sender, EventArgs e)
         {
             controller.GetState(out var state);
+            Console.WriteLine(state);
             switch (Reset_button_selected)
             {
                 case 0:
